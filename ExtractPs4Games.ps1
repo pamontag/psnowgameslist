@@ -103,8 +103,18 @@ for($j=13; $j -le 14; $j++){
                     Add-Content -Path $outputFile -Value "$($game.Trim()),PS4,,,"
                     continue
                 } 
-                if($game -like "*ICO*"){
+                if($game -like "*ICO CLASSICS HD*"){
                     $game = "ICO"
+                    Add-Content -Path $outputFile -Value "$($game.Trim()),PS2,,,"
+                    continue
+                }
+                if($game -like "*GOD OF WAR HD*"){
+                    $game = "GOD OF WAR"
+                    Add-Content -Path $outputFile -Value "$($game.Trim()),PS2,,,"
+                    continue
+                }
+                if($game -like "*GOD OF WAR II HD*"){
+                    $game = "GOD OF WAR II"
                     Add-Content -Path $outputFile -Value "$($game.Trim()),PS2,,,"
                     continue
                 }

@@ -192,6 +192,14 @@ foreach($game in $games) {
             if($userscore -eq "No score yet" -or $userscore -eq "tbd"){
                 $userscore = -1
             }
+            if($nplayer -eq "")
+            {
+                $nplayers = "N/A"
+            }
+            if($genre -eq "")
+            {
+                $genre = "N/A"
+            }
 
             Write-Host "$($game.Gioco) - VOTO: $metacriticvote - USERSCORE: $userscore PLAYERS: $nplayers GENERE: $genre"            
             Add-Content -Path $outputFile -Value "$($game.Gioco),$($game.Piattaforma),$($metacriticvote),$userscore,$genre,$nplayers"
