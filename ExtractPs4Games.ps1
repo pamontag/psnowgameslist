@@ -89,6 +89,9 @@ for($j=13; $j -le 14; $j++){
                 if($game -like "*ATELIER SHALLIE - ALCHEMISTS OF THE DUSK SEA*" -and $category -eq "PS4") {
                     continue
                 }
+                if($game -like "*WOLFENSTEIN: THE NEW ORDER*" -and $category -eq "PS3") {
+                    continue
+                }
                 if($game -like "*DARK CHRONICLE*") {
                     continue
                 }
@@ -97,6 +100,14 @@ for($j=13; $j -le 14; $j++){
                     Add-Content -Path $outputFile -Value "DUKE NUKEM FOREVER,$($category),,,,"
                     Add-Content -Path $outputFile -Value "DYNASTY WARRIORS 6,$($category),,,,"
                     continue                
+                }
+                if($game -like "*HOLLOW KNIGHT*"){
+                    $game = "HOLLOW KNIGHT VOIDHEART EDITION" 
+                }
+                if($game -like "*LIMBO*"){
+                    $game = "LIMBO"
+                    Add-Content -Path $outputFile -Value "$($game.Trim()),PS3,,,"
+                    continue 
                 }
 
                 if($game -match "^EVERYBODY'S GOLF$"){                    

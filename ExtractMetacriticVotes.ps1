@@ -140,6 +140,7 @@ foreach($game in $games) {
         $gamename = $gamename -replace "^STEALTH INC$","STEALTH INC A CLONE IN THE DARK ULTIMATE EDITION"
         $gamename = $gamename.Replace("PILLARS OF ETERNITY","PILLARS OF ETERNITY COMPLETE EDITION")  
         $gamename = $gamename.Replace("PURE HOLDEM","PURE HOLD EM")  
+        $gamename = $gamename.Replace("UNDEAD NIGHTMARE","UNDEAD NIGHTMARE PACK") 
         #last one, add - instead of spaces
         $gamename = $gamename.Replace(" ","-")
         $gamename = $gamename.ToLower()
@@ -192,11 +193,11 @@ foreach($game in $games) {
             if($userscore -eq "No score yet" -or $userscore -eq "tbd"){
                 $userscore = -1
             }
-            if($nplayer -eq "")
+            if(-not $nplayers)
             {
                 $nplayers = "N/A"
             }
-            if($genre -eq "")
+            if(-not $genre)
             {
                 $genre = "N/A"
             }
