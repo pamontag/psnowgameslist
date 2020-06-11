@@ -174,16 +174,23 @@ foreach($game in $games) {
                 $userscore = $userscore.InnerText.Trim()                
                 $userscore = $userscore.replace(".","")
             } else {
-                $userscore = "No score yet"
+                $userscore = -1
             }
             $genre = $html.SelectSingleNode("//li[contains(@class, 'summary_detail product_genre')]//span[contains(@class, 'data')]").InnerText
             $nplayers = $html.SelectSingleNode("//li[contains(@class, 'summary_detail product_players')]//span[contains(@class, 'data')]").InnerText
         
             if($game.Gioco -eq "DARK MIST") {
-                $metacriticvote = "No score yet"
-                $userscore = "No score yet"
+                $metacriticvote = -1
+                $userscore = -1
                 $genre = "Action"
                 $nplayers = ""
+            }
+
+            if($metacriticvote -eq "No score yet" -or $metacriticvote -eq "tbd"){
+                $metacriticvote = -1
+            }
+            if($userscore -eq "No score yet" -or $userscore -eq "tbd"){
+                $userscore = -1
             }
 
             Write-Host "$($game.Gioco) - VOTO: $metacriticvote - USERSCORE: $userscore PLAYERS: $nplayers GENERE: $genre"            
