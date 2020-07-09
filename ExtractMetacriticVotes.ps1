@@ -141,6 +141,7 @@ foreach($game in $games) {
         $gamename = $gamename.Replace("PILLARS OF ETERNITY","PILLARS OF ETERNITY COMPLETE EDITION")  
         $gamename = $gamename.Replace("PURE HOLDEM","PURE HOLD EM")  
         $gamename = $gamename.Replace("UNDEAD NIGHTMARE","UNDEAD NIGHTMARE PACK") 
+        $gamename = $gamename.Replace("INFINITE MINI GOLF","INFINITE MINIGOLF") 
         #last one, add - instead of spaces
         $gamename = $gamename.Replace(" ","-")
         $gamename = $gamename.ToLower()
